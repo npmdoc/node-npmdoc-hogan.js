@@ -1,0 +1,1507 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://twitter.github.com/hogan.js/">hogan.js (v3.0.2)</a>
+</h1>
+<h4>A mustache compiler.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hogan.js">module hogan.js</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.Template">
+            function <span class="apidocSignatureSpan">hogan.js.</span>Template
+            <span class="apidocSignatureSpan">(codeObj, text, compiler, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.cacheKey">
+            function <span class="apidocSignatureSpan">hogan.js.</span>cacheKey
+            <span class="apidocSignatureSpan">(text, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.compile">
+            function <span class="apidocSignatureSpan">hogan.js.</span>compile
+            <span class="apidocSignatureSpan">(text, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.generate">
+            function <span class="apidocSignatureSpan">hogan.js.</span>generate
+            <span class="apidocSignatureSpan">(tree, text, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.js.template">
+            function <span class="apidocSignatureSpan">hogan.js.</span>js.template
+            <span class="apidocSignatureSpan">(codeObj, text, compiler, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.makePartials">
+            function <span class="apidocSignatureSpan">hogan.js.</span>makePartials
+            <span class="apidocSignatureSpan">(codeObj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.makeTemplate">
+            function <span class="apidocSignatureSpan">hogan.js.</span>makeTemplate
+            <span class="apidocSignatureSpan">(codeObj, text, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.parse">
+            function <span class="apidocSignatureSpan">hogan.js.</span>parse
+            <span class="apidocSignatureSpan">(tokens, text, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.scan">
+            function <span class="apidocSignatureSpan">hogan.js.</span>scan
+            <span class="apidocSignatureSpan">(text, delimiters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.stringify">
+            function <span class="apidocSignatureSpan">hogan.js.</span>stringify
+            <span class="apidocSignatureSpan">(codeObj, text, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template">
+            function <span class="apidocSignatureSpan">hogan.js.</span>template
+            <span class="apidocSignatureSpan">(codeObj, text, compiler, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.walk">
+            function <span class="apidocSignatureSpan">hogan.js.</span>walk
+            <span class="apidocSignatureSpan">(nodelist, context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.wrapMain">
+            function <span class="apidocSignatureSpan">hogan.js.</span>wrapMain
+            <span class="apidocSignatureSpan">(code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hogan.js.</span>cache</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hogan.js.</span>codegen</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hogan.js.</span>js.codegen</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hogan.js.</span>js.template.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hogan.js.</span>tags</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hogan.js.codegen">module hogan.js.codegen</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.codegen._t">
+            function <span class="apidocSignatureSpan">hogan.js.codegen.</span>_t
+            <span class="apidocSignatureSpan">(node, context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.codegen._v">
+            function <span class="apidocSignatureSpan">hogan.js.codegen.</span>_v
+            <span class="apidocSignatureSpan">(node, context)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hogan.js.template">module hogan.js.template</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.template">
+            function <span class="apidocSignatureSpan">hogan.js.</span>template
+            <span class="apidocSignatureSpan">(codeObj, text, compiler, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hogan.js.template.prototype">module hogan.js.template.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.b">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>b
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.ct">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>ct
+            <span class="apidocSignatureSpan">(text, cx, partials)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.d">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>d
+            <span class="apidocSignatureSpan">(key, ctx, partials, returnFound)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.ep">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>ep
+            <span class="apidocSignatureSpan">(symbol, partials)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.f">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>f
+            <span class="apidocSignatureSpan">(key, ctx, partials, returnFound)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.fl">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>fl
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.ls">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>ls
+            <span class="apidocSignatureSpan">(func, cx, partials, text, tags)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.ms">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>ms
+            <span class="apidocSignatureSpan">(func, ctx, partials, inverted, start, end, tags)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.mv">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>mv
+            <span class="apidocSignatureSpan">(func, ctx, partials)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.r">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>r
+            <span class="apidocSignatureSpan">(context, partials, indent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.render">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>render
+            <span class="apidocSignatureSpan">(context, partials, indent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.ri">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>ri
+            <span class="apidocSignatureSpan">(context, partials, indent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.rp">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>rp
+            <span class="apidocSignatureSpan">(symbol, context, partials, indent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.rs">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>rs
+            <span class="apidocSignatureSpan">(context, partials, section)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.s">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>s
+            <span class="apidocSignatureSpan">(val, ctx, partials, inverted, start, end, tags)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.sub">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>sub
+            <span class="apidocSignatureSpan">(name, context, partials, indent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.t">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>t
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hogan.js.template.prototype.v">
+            function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>v
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hogan.js" id="apidoc.module.hogan.js">module hogan.js</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.Template" id="apidoc.element.hogan.js.Template">
+        function <span class="apidocSignatureSpan">hogan.js.</span>Template
+        <span class="apidocSignatureSpan">(codeObj, text, compiler, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Template = function (codeObj, text, compiler, options) {
+  codeObj = codeObj || {};
+  this.r = codeObj.code || this.r;
+  this.c = compiler;
+  this.options = options || {};
+  this.text = text || '';
+  this.partials = codeObj.partials || {};
+  this.subs = codeObj.subs || {};
+  this.buf = '';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.cacheKey" id="apidoc.element.hogan.js.cacheKey">
+        function <span class="apidocSignatureSpan">hogan.js.</span>cacheKey
+        <span class="apidocSignatureSpan">(text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cacheKey = function (text, options) {
+  return [text, !!options.asString, !!options.disableLambda, options.delimiters, !!options.modelGet].join('||');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.compile" id="apidoc.element.hogan.js.compile">
+        function <span class="apidocSignatureSpan">hogan.js.</span>compile
+        <span class="apidocSignatureSpan">(text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (text, options) {
+  options = options || {};
+  var key = Hogan.cacheKey(text, options);
+  var template = this.cache[key];
+
+  if (template) {
+    var partials = template.partials;
+    for (var name in partials) {
+      delete partials[name].instance;
+    }
+    return template;
+  }
+
+  template = this.generate(this.parse(this.scan(text, options.delimiters), text, options), text, options);
+  return this.cache[key] = template;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Hogan compiles templates to HoganTemplate objects, which have a render method.
+
+```js
+var data = {
+  screenName: "dhg",
+};
+
+var template = Hogan.<span class="apidocCodeKeywordSpan">compile</span>("Follow @{{screenName}}.");
+var output = template.render(data);
+
+// prints "Follow @dhg."
+console.log(output);
+```
+
+## Features
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.generate" id="apidoc.element.hogan.js.generate">
+        function <span class="apidocSignatureSpan">hogan.js.</span>generate
+        <span class="apidocSignatureSpan">(tree, text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">generate = function (tree, text, options) {
+  serialNo = 0;
+  var context = { code: '', subs: {}, partials: {} };
+  Hogan.walk(tree, context);
+
+  if (options.asString) {
+    return this.stringify(context, text, options);
+  }
+
+  return this.makeTemplate(context, text, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.js.template" id="apidoc.element.hogan.js.js.template">
+        function <span class="apidocSignatureSpan">hogan.js.</span>js.template
+        <span class="apidocSignatureSpan">(codeObj, text, compiler, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js.template = function (codeObj, text, compiler, options) {
+  codeObj = codeObj || {};
+  this.r = codeObj.code || this.r;
+  this.c = compiler;
+  this.options = options || {};
+  this.text = text || '';
+  this.partials = codeObj.partials || {};
+  this.subs = codeObj.subs || {};
+  this.buf = '';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.makePartials" id="apidoc.element.hogan.js.makePartials">
+        function <span class="apidocSignatureSpan">hogan.js.</span>makePartials
+        <span class="apidocSignatureSpan">(codeObj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makePartials = function (codeObj) {
+  var key, template = {subs: {}, partials: codeObj.partials, name: codeObj.name};
+  for (key in template.partials) {
+    template.partials[key] = this.makePartials(template.partials[key]);
+  }
+  for (key in codeObj.subs) {
+    template.subs[key] = new Function('c', 'p', 't', 'i', codeObj.subs[key]);
+  }
+  return template;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.makeTemplate" id="apidoc.element.hogan.js.makeTemplate">
+        function <span class="apidocSignatureSpan">hogan.js.</span>makeTemplate
+        <span class="apidocSignatureSpan">(codeObj, text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeTemplate = function (codeObj, text, options) {
+  var template = this.makePartials(codeObj);
+  template.code = new Function('c', 'p', 'i', this.wrapMain(codeObj.code));
+  return new this.template(template, text, this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.parse" id="apidoc.element.hogan.js.parse">
+        function <span class="apidocSignatureSpan">hogan.js.</span>parse
+        <span class="apidocSignatureSpan">(tokens, text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (tokens, text, options) {
+  options = options || {};
+  return buildTree(tokens, '', [], options.sectionTags || []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Hogan exposes scan and parse methods. These can be useful for
+pre-processing templates on the server.
+
+```js
+var text = "{{^check}}{{#i18n}}No{{/i18n}}{{/check}}";
+text +=  "{{#check}}{{#i18n}}Yes{{/i18n}}{{/check}}";
+var tree = Hogan.<span class="apidocCodeKeywordSpan">parse</span>(Hogan.scan(text));
+
+// outputs "# check"
+console.log(tree[0].tag + " " + tree[0].name);
+
+// outputs "Yes"
+console.log(tree[1].nodes[0].nodes[0]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.scan" id="apidoc.element.hogan.js.scan">
+        function <span class="apidocSignatureSpan">hogan.js.</span>scan
+        <span class="apidocSignatureSpan">(text, delimiters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function scan(text, delimiters) {
+  var len = text.length,
+      IN_TEXT = 0,
+      IN_TAG_TYPE = 1,
+      IN_TAG = 2,
+      state = IN_TEXT,
+      tagType = null,
+      tag = null,
+      buf = '',
+      tokens = [],
+      seenTag = false,
+      i = 0,
+      lineStart = 0,
+      otag = '{{',
+      ctag = '}}';
+
+  function addBuf() {
+    if (buf.length &gt; 0) {
+      tokens.push({tag: '_t', text: new String(buf)});
+      buf = '';
+    }
+  }
+
+  function lineIsWhitespace() {
+    var isAllWhitespace = true;
+    for (var j = lineStart; j &lt; tokens.length; j++) {
+      isAllWhitespace =
+        (Hogan.tags[tokens[j].tag] &lt; Hogan.tags['_v']) ||
+        (tokens[j].tag == '_t' &amp;&amp; tokens[j].text.match(rIsWhitespace) === null);
+      if (!isAllWhitespace) {
+        return false;
+      }
+    }
+
+    return isAllWhitespace;
+  }
+
+  function filterLine(haveSeenTag, noNewLine) {
+    addBuf();
+
+    if (haveSeenTag &amp;&amp; lineIsWhitespace()) {
+      for (var j = lineStart, next; j &lt; tokens.length; j++) {
+        if (tokens[j].text) {
+          if ((next = tokens[j+1]) &amp;&amp; next.tag == '&gt;') {
+            // set indent to token value
+            next.indent = tokens[j].text.toString()
+          }
+          tokens.splice(j, 1);
+        }
+      }
+    } else if (!noNewLine) {
+      tokens.push({tag:'\n'});
+    }
+
+    seenTag = false;
+    lineStart = tokens.length;
+  }
+
+  function changeDelimiters(text, index) {
+    var close = '=' + ctag,
+        closeIndex = text.indexOf(close, index),
+        delimiters = trim(
+          text.substring(text.indexOf('=', index) + 1, closeIndex)
+        ).split(' ');
+
+    otag = delimiters[0];
+    ctag = delimiters[delimiters.length - 1];
+
+    return closeIndex + close.length - 1;
+  }
+
+  if (delimiters) {
+    delimiters = delimiters.split(' ');
+    otag = delimiters[0];
+    ctag = delimiters[1];
+  }
+
+  for (i = 0; i &lt; len; i++) {
+    if (state == IN_TEXT) {
+      if (tagChange(otag, text, i)) {
+        --i;
+        addBuf();
+        state = IN_TAG_TYPE;
+      } else {
+        if (text.charAt(i) == '\n') {
+          filterLine(seenTag);
+        } else {
+          buf += text.charAt(i);
+        }
+      }
+    } else if (state == IN_TAG_TYPE) {
+      i += otag.length - 1;
+      tag = Hogan.tags[text.charAt(i + 1)];
+      tagType = tag ? text.charAt(i + 1) : '_v';
+      if (tagType == '=') {
+        i = changeDelimiters(text, i);
+        state = IN_TEXT;
+      } else {
+        if (tag) {
+          i++;
+        }
+        state = IN_TAG;
+      }
+      seenTag = i;
+    } else {
+      if (tagChange(ctag, text, i)) {
+        tokens.push({tag: tagType, n: trim(buf), otag: otag, ctag: ctag,
+                     i: (tagType == '/') ? seenTag - otag.length : i + ctag.length});
+        buf = '';
+        i += ctag.length - 1;
+        state = IN_TEXT;
+        if (tagType == '{') {
+          if (ctag == '}}') {
+            i++;
+          } else {
+            cleanTripleStache(tokens[tokens.length - 1]);
+          }
+        }
+      } else {
+        buf += text.charAt(i);
+      }
+    }
+  }
+
+  filterLine(seenTag, true);
+
+  return tokens;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Hogan exposes scan and parse methods. These can be useful for
+pre-processing templates on the server.
+
+```js
+var text = "{{^check}}{{#i18n}}No{{/i18n}}{{/check}}";
+text +=  "{{#check}}{{#i18n}}Yes{{/i18n}}{{/check}}";
+var tree = Hogan.parse(Hogan.<span class="apidocCodeKeywordSpan">scan</span>(text));
+
+// outputs "# check"
+console.log(tree[0].tag + " " + tree[0].name);
+
+// outputs "Yes"
+console.log(tree[1].nodes[0].nodes[0]);
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.stringify" id="apidoc.element.hogan.js.stringify">
+        function <span class="apidocSignatureSpan">hogan.js.</span>stringify
+        <span class="apidocSignatureSpan">(codeObj, text, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringify = function (codeObj, text, options) {
+  return "{code: function (c,p,i) { " + Hogan.wrapMain(codeObj.code) + " }," + stringifyPartials(codeObj) +  "}";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template" id="apidoc.element.hogan.js.template">
+        function <span class="apidocSignatureSpan">hogan.js.</span>template
+        <span class="apidocSignatureSpan">(codeObj, text, compiler, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">template = function (codeObj, text, compiler, options) {
+  codeObj = codeObj || {};
+  this.r = codeObj.code || this.r;
+  this.c = compiler;
+  this.options = options || {};
+  this.text = text || '';
+  this.partials = codeObj.partials || {};
+  this.subs = codeObj.subs || {};
+  this.buf = '';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.walk" id="apidoc.element.hogan.js.walk">
+        function <span class="apidocSignatureSpan">hogan.js.</span>walk
+        <span class="apidocSignatureSpan">(nodelist, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">walk = function (nodelist, context) {
+  var func;
+  for (var i = 0, l = nodelist.length; i &lt; l; i++) {
+    func = Hogan.codegen[nodelist[i].tag];
+    func &amp;&amp; func(nodelist[i], context);
+  }
+  return context;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.wrapMain" id="apidoc.element.hogan.js.wrapMain">
+        function <span class="apidocSignatureSpan">hogan.js.</span>wrapMain
+        <span class="apidocSignatureSpan">(code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">wrapMain = function (code) {
+  return 'var t=this;t.b(i=i||"");' + code + 'return t.fl();';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hogan.js.codegen" id="apidoc.module.hogan.js.codegen">module hogan.js.codegen</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.codegen._t" id="apidoc.element.hogan.js.codegen._t">
+        function <span class="apidocSignatureSpan">hogan.js.codegen.</span>_t
+        <span class="apidocSignatureSpan">(node, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_t = function (node, context) {
+  context.code += write('"' + esc(node.text) + '"');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.codegen._v" id="apidoc.element.hogan.js.codegen._v">
+        function <span class="apidocSignatureSpan">hogan.js.codegen.</span>_v
+        <span class="apidocSignatureSpan">(node, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_v = function (node, context) {
+  context.code += 't.b(t.v(t.' + chooseMethod(node.n) + '("' + esc(node.n) + '",c,p,0)));';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hogan.js.template" id="apidoc.module.hogan.js.template">module hogan.js.template</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.template" id="apidoc.element.hogan.js.template.template">
+        function <span class="apidocSignatureSpan">hogan.js.</span>template
+        <span class="apidocSignatureSpan">(codeObj, text, compiler, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">template = function (codeObj, text, compiler, options) {
+  codeObj = codeObj || {};
+  this.r = codeObj.code || this.r;
+  this.c = compiler;
+  this.options = options || {};
+  this.text = text || '';
+  this.partials = codeObj.partials || {};
+  this.subs = codeObj.subs || {};
+  this.buf = '';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hogan.js.template.prototype" id="apidoc.module.hogan.js.template.prototype">module hogan.js.template.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.b" id="apidoc.element.hogan.js.template.prototype.b">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>b
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">b = function (s) { this.buf += s; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+// higher order templates
+ls: function(func, cx, partials, text, tags) {
+  var oldTags = this.options.delimiters;
+
+  this.options.delimiters = tags;
+  this.<span class="apidocCodeKeywordSpan">b</span>(this.ct(coerceToString(func.call(cx, text)), cx, partials));
+  this.options.delimiters = oldTags;
+
+  return false;
+},
+
+// compile text
+ct: function(text, cx, partials) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.ct" id="apidoc.element.hogan.js.template.prototype.ct">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>ct
+        <span class="apidocSignatureSpan">(text, cx, partials)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ct = function (text, cx, partials) {
+  if (this.options.disableLambda) {
+    throw new Error('Lambda features disabled.');
+  }
+  return this.c.compile(text, this.options).render(cx, partials);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+// higher order templates
+ls: function(func, cx, partials, text, tags) {
+  var oldTags = this.options.delimiters;
+
+  this.options.delimiters = tags;
+  this.b(this.<span class="apidocCodeKeywordSpan">ct</span>(coerceToString(func.call(cx, text)), cx, partials));
+  this.options.delimiters = oldTags;
+
+  return false;
+},
+
+// compile text
+ct: function(text, cx, partials) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.d" id="apidoc.element.hogan.js.template.prototype.d">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>d
+        <span class="apidocSignatureSpan">(key, ctx, partials, returnFound)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">d = function (key, ctx, partials, returnFound) {
+  var found,
+      names = key.split('.'),
+      val = this.f(names[0], ctx, partials, returnFound),
+      doModelGet = this.options.modelGet,
+      cx = null;
+
+  if (key === '.' &amp;&amp; isArray(ctx[ctx.length - 2])) {
+    val = ctx[ctx.length - 1];
+  } else {
+    for (var i = 1; i &lt; names.length; i++) {
+      found = findInScope(names[i], val, doModelGet);
+      if (found !== undefined) {
+        cx = val;
+        val = found;
+      } else {
+        val = '';
+      }
+    }
+  }
+
+  if (returnFound &amp;&amp; !val) {
+    return false;
+  }
+
+  if (!returnFound &amp;&amp; typeof val == 'function') {
+    ctx.push(cx);
+    val = this.mv(val, ctx, partials);
+    ctx.pop();
+  }
+
+  return val;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.ep" id="apidoc.element.hogan.js.template.prototype.ep">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>ep
+        <span class="apidocSignatureSpan">(symbol, partials)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ep = function (symbol, partials) {
+  var partial = this.partials[symbol];
+
+  // check to see that if we've instantiated this partial before
+  var template = partials[partial.name];
+  if (partial.instance &amp;&amp; partial.base == template) {
+    return partial.instance;
+  }
+
+  if (typeof template == 'string') {
+    if (!this.c) {
+      throw new Error("No compiler available.");
+    }
+    template = this.c.compile(template, this.options);
+  }
+
+  if (!template) {
+    return null;
+  }
+
+  // We use this to check whether the partials dictionary has changed
+  this.partials[symbol].base = template;
+
+  if (partial.subs) {
+    // Make sure we consider parent template now
+    if (!partials.stackText) partials.stackText = {};
+    for (key in partial.subs) {
+      if (!partials.stackText[key]) {
+        partials.stackText[key] = (this.activeSub !== undefined &amp;&amp; partials.stackText[this.activeSub]) ? partials.stackText[this
+.activeSub] : this.text;
+      }
+    }
+    template = createSpecializedPartial(template, partial.subs, partial.partials,
+      this.stackSubs, this.stackPartials, partials.stackText);
+  }
+  this.partials[symbol].instance = template;
+
+  return template;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.partials[symbol].instance = template;
+
+  return template;
+},
+
+// tries to find a partial in the current scope and render it
+rp: function(symbol, context, partials, indent) {
+  var partial = this.<span class="apidocCodeKeywordSpan">ep</span>(symbol, partials);
+  if (!partial) {
+    return '';
+  }
+
+  return partial.ri(context, partials, indent);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.f" id="apidoc.element.hogan.js.template.prototype.f">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>f
+        <span class="apidocSignatureSpan">(key, ctx, partials, returnFound)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">f = function (key, ctx, partials, returnFound) {
+  var val = false,
+      v = null,
+      found = false,
+      doModelGet = this.options.modelGet;
+
+  for (var i = ctx.length - 1; i &gt;= 0; i--) {
+    v = ctx[i];
+    val = findInScope(key, v, doModelGet);
+    if (val !== undefined) {
+      found = true;
+      break;
+    }
+  }
+
+  if (!found) {
+    return (returnFound) ? false : "";
+  }
+
+  if (!returnFound &amp;&amp; typeof val == 'function') {
+    val = this.mv(val, ctx, partials);
+  }
+
+  return val;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return pass;
+    },
+
+    // find values with dotted names
+    d: function(key, ctx, partials, returnFound) {
+var found,
+    names = key.split('.'),
+    val = this.<span class="apidocCodeKeywordSpan">f</span>(names[0], ctx, partials, returnFound),
+    doModelGet = this.options.modelGet,
+    cx = null;
+
+if (key === '.' &amp;&amp; isArray(ctx[ctx.length - 2])) {
+  val = ctx[ctx.length - 1];
+} else {
+  for (var i = 1; i &lt; names.length; i++) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.fl" id="apidoc.element.hogan.js.template.prototype.fl">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>fl
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fl = function () { var r = this.buf; this.buf = ''; return r; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.ls" id="apidoc.element.hogan.js.template.prototype.ls">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>ls
+        <span class="apidocSignatureSpan">(func, cx, partials, text, tags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ls = function (func, cx, partials, text, tags) {
+  var oldTags = this.options.delimiters;
+
+  this.options.delimiters = tags;
+  this.b(this.ct(coerceToString(func.call(cx, text)), cx, partials));
+  this.options.delimiters = oldTags;
+
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      result = func.call(cx);
+
+  if (typeof result == 'function') {
+    if (inverted) {
+      return true;
+    } else {
+      textSource = (this.activeSub &amp;&amp; this.subsText &amp;&amp; this.subsText[this.activeSub]) ? this.subsText[this.activeSub
+] : this.text;
+      return this.<span class="apidocCodeKeywordSpan">ls</span>(result, cx, partials, textSource.substring(start, end), tags);
+    }
+  }
+
+  return result;
+},
+
+// method replace variable
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.ms" id="apidoc.element.hogan.js.template.prototype.ms">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>ms
+        <span class="apidocSignatureSpan">(func, ctx, partials, inverted, start, end, tags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ms = function (func, ctx, partials, inverted, start, end, tags) {
+  var textSource,
+      cx = ctx[ctx.length - 1],
+      result = func.call(cx);
+
+  if (typeof result == 'function') {
+    if (inverted) {
+      return true;
+    } else {
+      textSource = (this.activeSub &amp;&amp; this.subsText &amp;&amp; this.subsText[this.activeSub]) ? this.subsText[this.activeSub] : this.text
+;
+      return this.ls(result, cx, partials, textSource.substring(start, end), tags);
+    }
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var pass;
+
+if (isArray(val) &amp;&amp; val.length === 0) {
+  return false;
+}
+
+if (typeof val == 'function') {
+  val = this.<span class="apidocCodeKeywordSpan">ms</span>(val, ctx, partials, inverted, start, end, tags);
+}
+
+pass = !!val;
+
+if (!inverted &amp;&amp; pass &amp;&amp; ctx) {
+  ctx.push((typeof val == 'object') ? val : ctx[ctx.length - 1]);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.mv" id="apidoc.element.hogan.js.template.prototype.mv">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>mv
+        <span class="apidocSignatureSpan">(func, ctx, partials)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mv = function (func, ctx, partials) {
+  var cx = ctx[ctx.length - 1];
+  var result = func.call(cx);
+
+  if (typeof result == 'function') {
+    return this.ct(coerceToString(result.call(cx)), cx, partials);
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (returnFound &amp;&amp; !val) {
+    return false;
+  }
+
+  if (!returnFound &amp;&amp; typeof val == 'function') {
+    ctx.push(cx);
+    val = this.<span class="apidocCodeKeywordSpan">mv</span>(val, ctx, partials);
+    ctx.pop();
+  }
+
+  return val;
+},
+
+// find values with normal names
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.r" id="apidoc.element.hogan.js.template.prototype.r">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>r
+        <span class="apidocSignatureSpan">(context, partials, indent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">r = function (context, partials, indent) { return ''; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    render: function render(context, partials, indent) {
+return this.ri([context], partials || {}, indent);
+    },
+
+    // render internal -- a hook for overrides that catches partials too
+    ri: function (context, partials, indent) {
+return this.<span class="apidocCodeKeywordSpan">r</span>(context, partials, indent);
+    },
+
+    // ensurePartial
+    ep: function(symbol, partials) {
+var partial = this.partials[symbol];
+
+// check to see that if we've instantiated this partial before
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.render" id="apidoc.element.hogan.js.template.prototype.render">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>render
+        <span class="apidocSignatureSpan">(context, partials, indent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function render(context, partials, indent) {
+  return this.ri([context], partials || {}, indent);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+var data = {
+  screenName: "dhg",
+};
+
+var template = Hogan.compile("Follow @{{screenName}}.");
+var output = template.<span class="apidocCodeKeywordSpan">render</span>(data);
+
+// prints "Follow @dhg."
+console.log(output);
+```
+
+## Features
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.ri" id="apidoc.element.hogan.js.template.prototype.ri">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>ri
+        <span class="apidocSignatureSpan">(context, partials, indent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ri = function (context, partials, indent) {
+  return this.r(context, partials, indent);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// variable escaping
+v: hoganEscape,
+
+// triple stache
+t: coerceToString,
+
+render: function render(context, partials, indent) {
+  return this.<span class="apidocCodeKeywordSpan">ri</span>([context], partials || {}, indent);
+},
+
+// render internal -- a hook for overrides that catches partials too
+ri: function (context, partials, indent) {
+  return this.r(context, partials, indent);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.rp" id="apidoc.element.hogan.js.template.prototype.rp">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>rp
+        <span class="apidocSignatureSpan">(symbol, context, partials, indent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rp = function (symbol, context, partials, indent) {
+  var partial = this.ep(symbol, partials);
+  if (!partial) {
+    return '';
+  }
+
+  return partial.ri(context, partials, indent);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.rs" id="apidoc.element.hogan.js.template.prototype.rs">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>rs
+        <span class="apidocSignatureSpan">(context, partials, section)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rs = function (context, partials, section) {
+  var tail = context[context.length - 1];
+
+  if (!isArray(tail)) {
+    section(context, partials, this);
+    return;
+  }
+
+  for (var i = 0; i &lt; tail.length; i++) {
+    context.push(tail[i]);
+    section(context, partials, this);
+    context.pop();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.s" id="apidoc.element.hogan.js.template.prototype.s">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>s
+        <span class="apidocSignatureSpan">(val, ctx, partials, inverted, start, end, tags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">s = function (val, ctx, partials, inverted, start, end, tags) {
+  var pass;
+
+  if (isArray(val) &amp;&amp; val.length === 0) {
+    return false;
+  }
+
+  if (typeof val == 'function') {
+    val = this.ms(val, ctx, partials, inverted, start, end, tags);
+  }
+
+  pass = !!val;
+
+  if (!inverted &amp;&amp; pass &amp;&amp; ctx) {
+    ctx.push((typeof val == 'object') ? val : ctx[ctx.length - 1]);
+  }
+
+  return pass;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.sub" id="apidoc.element.hogan.js.template.prototype.sub">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>sub
+        <span class="apidocSignatureSpan">(name, context, partials, indent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sub = function (name, context, partials, indent) {
+  var f = this.subs[name];
+  if (f) {
+    this.activeSub = name;
+    f(context, partials, this, indent);
+    this.activeSub = false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.t" id="apidoc.element.hogan.js.template.prototype.t">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>t
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function coerceToString(val) {
+  return String((val === null || val === undefined) ? '' : val);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hogan.js.template.prototype.v" id="apidoc.element.hogan.js.template.prototype.v">
+        function <span class="apidocSignatureSpan">hogan.js.template.prototype.</span>v
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hoganEscape(str) {
+  str = coerceToString(str);
+  return hChars.test(str) ?
+    str
+      .replace(rAmp, '&amp;amp;')
+      .replace(rLt, '&amp;lt;')
+      .replace(rGt, '&amp;gt;')
+      .replace(rApos, '&amp;#39;')
+      .replace(rQuot, '&amp;quot;') :
+    str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
