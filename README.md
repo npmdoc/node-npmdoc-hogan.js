@@ -1,6 +1,6 @@
 # npmdoc-hogan.js
 
-#### api documentation for  [hogan.js (v3.0.2)](http://twitter.github.com/hogan.js/)  [![npm package](https://img.shields.io/npm/v/npmdoc-hogan.js.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hogan.js) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hogan.js.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hogan.js)
+#### basic api documentation for  [hogan.js (v3.0.2)](http://twitter.github.com/hogan.js/)  [![npm package](https://img.shields.io/npm/v/npmdoc-hogan.js.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hogan.js) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hogan.js.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hogan.js)
 
 #### A mustache compiler.
 
