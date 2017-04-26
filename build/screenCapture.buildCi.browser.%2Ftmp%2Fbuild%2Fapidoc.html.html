@@ -563,7 +563,21 @@
   this.subs = codeObj.subs || {};
   this.buf = '';
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+&lt;script src="http://twitter.github.com/hogan.js/builds/2.0.0/template-2.0.0.js"&gt;
+&lt;script&gt;
+if (!!!templates) var templates = {};
+templates["TM.test"] = new Hogan.<span class="apidocCodeKeywordSpan">Template</span>({code: function (c,p,i) { var t=this
+;t.b(i=i||"");t.b("&lt;div&gt;");t.b(t.v(t.f("foo",c,p,0)));t.b("&lt;/div&gt;");
+return t.fl(); },partials: {}, subs: {  }});
+
+alert(templates.test.render({'foo': 'bar'}));
+&lt;/script&gt;
+...</pre></li>
     </ul>
 
 
@@ -623,21 +637,22 @@ if (template) {
   return this.cache[key] = template;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-Hogan compiles templates to HoganTemplate objects, which have a render method.
 
-```js
-var data = {
-  screenName: "dhg",
-};
 
-var template = Hogan.<span class="apidocCodeKeywordSpan">compile</span>("Follow @{{screenName}}.");
-var output = template.render(data);
 
-// prints "Follow @dhg."
-console.log(output);
-```
+var Hogan = Hogan || require('./lib/hogan');
 
-## Features
+function doIt() {
+
+var child        = Hogan.<span class="apidocCodeKeywordSpan">compile</span>('{{&lt; intermediate }} {{$childcontent}} child
+ content {{/childcontent}} {{/intermediate}}');
+
+var intermediate = Hogan.compile('{{&lt; parent}} {{$content}} intermediate content {{$childcontent}} ERROR {{/childcontent
+}} {{/content}} {{/parent}}');
+
+var parent       = Hogan.compile('Content:{{$content}} parent content{{/content}}');
+
+var result       = child.render({}, {intermediate: intermediate, parent: parent});
 ...</pre></li>
     </ul>
 
@@ -662,18 +677,22 @@ console.log(output);
   return this.makeTemplate(context, text, options);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-      var partials = template.partials;
-      for (var name in partials) {
-        delete partials[name].instance;
-      }
-      return template;
+    var partials = template.partials;
+    for (var name in partials) {
+      delete partials[name].instance;
     }
-
-    template = this.<span class="apidocCodeKeywordSpan">generate</span>(this.parse(this.scan(text, options.delimiters), text, options
-), text, options);
-    return this.cache[key] = template;
+    return template;
   }
+
+  template = this.<span class="apidocCodeKeywordSpan">generate</span>(this.parse(this.scan(text, options.delimiters), text, options
+), text, options);
+  return this.cache[key] = template;
+}
 })(typeof exports !== 'undefined' ? exports : Hogan);
+
+
+if (typeof define === 'function' &amp;&amp; define.amd) {
+define(Hogan);
 ...</pre></li>
     </ul>
 
@@ -1168,7 +1187,21 @@ Hogan.generate = function(tree, text, options) {
   this.subs = codeObj.subs || {};
   this.buf = '';
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+&lt;script src="http://twitter.github.com/hogan.js/builds/2.0.0/template-2.0.0.js"&gt;
+&lt;script&gt;
+if (!!!templates) var templates = {};
+templates["TM.test"] = new Hogan.<span class="apidocCodeKeywordSpan">Template</span>({code: function (c,p,i) { var t=this
+;t.b(i=i||"");t.b("&lt;div&gt;");t.b(t.v(t.f("foo",c,p,0)));t.b("&lt;/div&gt;");
+return t.fl(); },partials: {}, subs: {  }});
+
+alert(templates.test.render({'foo': 'bar'}));
+&lt;/script&gt;
+...</pre></li>
     </ul>
 
 
@@ -1228,21 +1261,22 @@ if (template) {
   return this.cache[key] = template;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-Hogan compiles templates to HoganTemplate objects, which have a render method.
 
-```js
-var data = {
-  screenName: "dhg",
-};
 
-var template = Hogan.<span class="apidocCodeKeywordSpan">compile</span>("Follow @{{screenName}}.");
-var output = template.render(data);
 
-// prints "Follow @dhg."
-console.log(output);
-```
+var Hogan = Hogan || require('./lib/hogan');
 
-## Features
+function doIt() {
+
+var child        = Hogan.<span class="apidocCodeKeywordSpan">compile</span>('{{&lt; intermediate }} {{$childcontent}} child
+ content {{/childcontent}} {{/intermediate}}');
+
+var intermediate = Hogan.compile('{{&lt; parent}} {{$content}} intermediate content {{$childcontent}} ERROR {{/childcontent
+}} {{/content}} {{/parent}}');
+
+var parent       = Hogan.compile('Content:{{$content}} parent content{{/content}}');
+
+var result       = child.render({}, {intermediate: intermediate, parent: parent});
 ...</pre></li>
     </ul>
 
@@ -1267,18 +1301,22 @@ console.log(output);
   return this.makeTemplate(context, text, options);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-      var partials = template.partials;
-      for (var name in partials) {
-        delete partials[name].instance;
-      }
-      return template;
+    var partials = template.partials;
+    for (var name in partials) {
+      delete partials[name].instance;
     }
-
-    template = this.<span class="apidocCodeKeywordSpan">generate</span>(this.parse(this.scan(text, options.delimiters), text, options
-), text, options);
-    return this.cache[key] = template;
+    return template;
   }
+
+  template = this.<span class="apidocCodeKeywordSpan">generate</span>(this.parse(this.scan(text, options.delimiters), text, options
+), text, options);
+  return this.cache[key] = template;
+}
 })(typeof exports !== 'undefined' ? exports : Hogan);
+
+
+if (typeof define === 'function' &amp;&amp; define.amd) {
+define(Hogan);
 ...</pre></li>
     </ul>
 
@@ -1745,22 +1783,19 @@ Hogan.makePartials = function(codeObj) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">b = function (s) { this.buf += s; }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    return this.stringify(context, text, options);
-  }
 
-  return this.makeTemplate(context, text, options);
-}
 
-Hogan.wrapMain = function(code) {
-  return 'var t=this;t.<span class="apidocCodeKeywordSpan">b</span>(i=i||"");' + code + 'return t.fl();&amp;#
-x27;;
-}
 
-Hogan.template = Hogan.Template;
 
-Hogan.makeTemplate = function(codeObj, text, options) {
-  var template = this.makePartials(codeObj);
-  template.code = new Function('c', 'p', 'i', this.wrapMain(codeObj.code));
+&lt;script src="http://twitter.github.com/hogan.js/builds/2.0.0/template-2.0.0.js"&gt;
+&lt;script&gt;
+if (!!!templates) var templates = {};
+templates["TM.test"] = new Hogan.Template({code: function (c,p,i) { var t=this;t.<span class="apidocCodeKeywordSpan">b
+</span>(i=i||"");t.b("&lt;div&gt;");t.b(t.v(t.f("foo",c,p,0)));t.b("&lt;/div&gt;"
+;);return t.fl(); },partials: {}, subs: {  }});
+
+alert(templates.test.render({'foo': 'bar'}));
+&lt;/script&gt;
 ...</pre></li>
     </ul>
 
@@ -1944,21 +1979,19 @@ rp: function(symbol, context, partials, indent) {
   return val;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-return pass;
-    },
 
-    // find values with dotted names
-    d: function(key, ctx, partials, returnFound) {
-var found,
-    names = key.split('.'),
-    val = this.<span class="apidocCodeKeywordSpan">f</span>(names[0], ctx, partials, returnFound),
-    doModelGet = this.options.modelGet,
-    cx = null;
 
-if (key === '.' &amp;&amp; isArray(ctx[ctx.length - 2])) {
-  val = ctx[ctx.length - 1];
-} else {
-  for (var i = 1; i &lt; names.length; i++) {
+
+
+&lt;script src="http://twitter.github.com/hogan.js/builds/2.0.0/template-2.0.0.js"&gt;
+&lt;script&gt;
+if (!!!templates) var templates = {};
+templates["TM.test"] = new Hogan.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");t.b("&lt;
+div&gt;");t.b(t.v(t.<span class="apidocCodeKeywordSpan">f</span>("foo",c,p,0)));t.b("&lt;/div&gt;"
+;);return t.fl(); },partials: {}, subs: {  }});
+
+alert(templates.test.render({'foo': 'bar'}));
+&lt;/script&gt;
 ...</pre></li>
     </ul>
 
@@ -1973,22 +2006,19 @@ if (key === '.' &amp;&amp; isArray(ctx[ctx.length - 2])) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">fl = function () { var r = this.buf; this.buf = ''; return r; }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    return this.stringify(context, text, options);
-  }
 
-  return this.makeTemplate(context, text, options);
-}
 
-Hogan.wrapMain = function(code) {
-  return 'var t=this;t.b(i=i||"");' + code + 'return t.<span class="apidocCodeKeywordSpan">fl</span>();&amp;#
-x27;;
-}
 
-Hogan.template = Hogan.Template;
 
-Hogan.makeTemplate = function(codeObj, text, options) {
-  var template = this.makePartials(codeObj);
-  template.code = new Function('c', 'p', 'i', this.wrapMain(codeObj.code));
+&lt;script src="http://twitter.github.com/hogan.js/builds/2.0.0/template-2.0.0.js"&gt;
+&lt;script&gt;
+if (!!!templates) var templates = {};
+templates["TM.test"] = new Hogan.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");t.b("&lt;
+div&gt;");t.b(t.v(t.f("foo",c,p,0)));t.b("&lt;/div&gt;");return t.<span class="apidocCodeKeywordSpan
+">fl</span>(); },partials: {}, subs: {  }});
+
+alert(templates.test.render({'foo': 'bar'}));
+&lt;/script&gt;
 ...</pre></li>
     </ul>
 
@@ -2156,19 +2186,21 @@ var partial = this.partials[symbol];
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-```js
-var data = {
-  screenName: "dhg",
-};
+    var child        = Hogan.compile('{{&lt; intermediate }} {{$childcontent}} child content {{/childcontent}} {{/intermediate
+}}');
 
-var template = Hogan.compile("Follow @{{screenName}}.");
-var output = template.<span class="apidocCodeKeywordSpan">render</span>(data);
+    var intermediate = Hogan.compile('{{&lt; parent}} {{$content}} intermediate content {{$childcontent}} ERROR {{/childcontent
+}} {{/content}} {{/parent}}');
 
-// prints "Follow @dhg."
-console.log(output);
-```
+    var parent       = Hogan.compile('Content:{{$content}} parent content{{/content}}');
 
-## Features
+    var result       = child.<span class="apidocCodeKeywordSpan">render</span>({}, {intermediate: intermediate, parent: parent});
+
+    console.log("got:     ", result);
+    console.log("expected:", "Content: intermediate content child content")
+}
+
+function doIt2() {
 ...</pre></li>
     </ul>
 
@@ -2424,22 +2456,19 @@ Hogan.walk = function(nodelist, context) {
     str;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-},
 
-'\n': function(node, context) {
-  context.code += write('"\\n"' + (node.last ? '' : ' + i'));
-},
 
-'_v': function(node, context) {
-  context.code += 't.b(t.<span class="apidocCodeKeywordSpan">v</span>(t.' + chooseMethod(node.n) + '("' +
-esc(node.n) + '",c,p,0)));';
-},
 
-'_t': function(node, context) {
-  context.code += write('"' + esc(node.text) + '"');
-},
 
-'{': tripleStache,
+&lt;script src="http://twitter.github.com/hogan.js/builds/2.0.0/template-2.0.0.js"&gt;
+&lt;script&gt;
+if (!!!templates) var templates = {};
+templates["TM.test"] = new Hogan.Template({code: function (c,p,i) { var t=this;t.b(i=i||"");t.b("&lt;
+div&gt;");t.b(t.<span class="apidocCodeKeywordSpan">v</span>(t.f("foo",c,p,0)));t.b("&lt;/div&gt;"
+;);return t.fl(); },partials: {}, subs: {  }});
+
+alert(templates.test.render({'foo': 'bar'}));
+&lt;/script&gt;
 ...</pre></li>
     </ul>
 
